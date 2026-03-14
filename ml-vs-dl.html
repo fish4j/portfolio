@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Machine Learning vs Deep Learning</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+line-height:1.6;
+color:#333;
+background:#f7f7f7;
+}
+
+header{
+background:#111;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+background:white;
+}
+
+h2{
+border-bottom:2px solid #eee;
+padding-bottom:10px;
+}
+
+h3{
+margin-top:30px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table th, table td{
+border:1px solid #ddd;
+padding:10px;
+text-align:left;
+}
+
+table th{
+background:#f1f1f1;
+}
+
+.back{
+text-align:center;
+margin-top:40px;
+}
+
+.back a{
+text-decoration:none;
+color:#4da3ff;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Machine Learning vs Deep Learning</h1>
+<p>Real-World Applications</p>
+</header>
+
+<div class="container">
+
+<h2>Part 1: Examples & Real-World Applications</h2>
+
+<h3>A. Simple Machine Learning Examples</h3>
+
+<h4>Email Spam Detection</h4>
+
+<ul>
+<li><strong>Algorithm:</strong> Naive Bayes / Support Vector Machine</li>
+<li><strong>Real-World Application:</strong> Email spam filters classify incoming emails by learning patterns from large labeled datasets, identifying suspicious keywords, sender behavior, and email structure.</li>
+</ul>
+
+<h4>House Price Prediction</h4>
+
+<ul>
+<li><strong>Algorithm:</strong> Linear Regression / Random Forest</li>
+<li><strong>Real-World Application:</strong> Real estate valuation systems estimate home values using historical data such as location, square footage, property features, and previous sale prices.</li>
+</ul>
+
+<h3>B. Deep Learning Example</h3>
+
+<h4>Natural Language Processing</h4>
+
+<ul>
+<li><strong>Algorithm:</strong> LSTM / Transformer Neural Networks</li>
+<li><strong>Real-World Application:</strong> Modern AI assistants and language translation systems use deep neural networks to understand, translate, and generate human language in real time.</li>
+</ul>
+
+<h2>Part 2: Suitability Analysis</h2>
+
+<h3>Why Simple ML Works Well for Spam Detection & Price Prediction</h3>
+
+<table>
+
+<tr>
+<th>Factor</th>
+<th>Explanation</th>
+</tr>
+
+<tr>
+<td>Structured Data</td>
+<td>Both tasks rely on structured tabular data with clearly defined features.</td>
+</tr>
+
+<tr>
+<td>Labeled Data</td>
+<td>Historical labeled datasets allow supervised learning models to train effectively.</td>
+</tr>
+
+<tr>
+<td>Interpretability</td>
+<td>Models are transparent and easier to interpret for decision-making.</td>
+</tr>
+
+<tr>
+<td>Efficiency</td>
+<td>These models train quickly and require minimal computational resources.</td>
+</tr>
+
+</table>
+
+<h3>Why Deep Learning Is Not Ideal for These Tasks</h3>
+
+<ul>
+<li>Deep learning is unnecessary for structured tabular datasets</li>
+<li>Requires extremely large datasets to outperform simpler models</li>
+<li>Acts as a black-box model, reducing interpretability</li>
+<li>Higher computational cost with limited performance benefit</li>
+</ul>
+
+<h3>Why Deep Learning Works Well for Natural Language Processing</h3>
+
+<table>
+
+<tr>
+<th>Factor</th>
+<th>Explanation</th>
+</tr>
+
+<tr>
+<td>Unstructured Data</td>
+<td>Language data is complex and difficult to represent with simple features.</td>
+</tr>
+
+<tr>
+<td>Context</td>
+<td>Word meaning depends on context, which deep neural networks can capture.</td>
+</tr>
+
+<tr>
+<td>Scale</td>
+<td>Deep learning models perform best with very large datasets.</td>
+</tr>
+
+<tr>
+<td>Feature Learning</td>
+<td>Neural networks automatically learn linguistic patterns.</td>
+</tr>
+
+</table>
+
+<h3>Why Traditional ML Struggles With NLP</h3>
+
+<ul>
+<li>Requires manual feature engineering</li>
+<li>Cannot capture long-range dependencies in text</li>
+<li>Struggles with ambiguity and contextual meaning</li>
+<li>Lacks capacity for complex language representation</li>
+</ul>
+
+<h2>Summary</h2>
+
+<table>
+
+<tr>
+<th></th>
+<th>Email Spam Detection</th>
+<th>House Price Prediction</th>
+<th>NLP</th>
+</tr>
+
+<tr>
+<td><strong>Best Approach</strong></td>
+<td>Simple ML</td>
+<td>Simple ML</td>
+<td>Deep Learning</td>
+</tr>
+
+<tr>
+<td><strong>Data Type</strong></td>
+<td>Structured</td>
+<td>Structured</td>
+<td>Unstructured</td>
+</tr>
+
+<tr>
+<td><strong>Key Reason</strong></td>
+<td>Binary classification</td>
+<td>Regression on tabular data</td>
+<td>Context and language complexity</td>
+</tr>
+
+</table>
+
+<div class="back">
+<a href="index.html">← Back to Portfolio</a>
+</div>
+
+</div>
+
+</body>
+</html>
