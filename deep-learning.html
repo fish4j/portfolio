@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Deep Learning and Neural Networks</title>
+
+    <style>
+
+        body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin:0;
+        line-height:1.6;
+        color:#333;
+        background:#f7f7f7;
+        }
+
+        header{
+        background:#111;
+        color:white;
+        padding:40px 20px;
+        text-align:center;
+        }
+
+        .container{
+        max-width:900px;
+        margin:auto;
+        padding:40px 20px;
+        background:white;
+        }
+
+        h2{
+        border-bottom:2px solid #eee;
+        padding-bottom:10px;
+        }
+
+        h3{
+        margin-top:30px;
+        }
+
+        .card{
+        background:#f9f9f9;
+        padding:20px;
+        border-radius:6px;
+        margin-top:20px;
+        }
+
+        .back{
+        text-align:center;
+        margin-top:40px;
+        }
+
+        .back a{
+        text-decoration:none;
+        color:#4da3ff;
+        font-weight:bold;
+        }
+
+        .diagram{
+        margin:30px 0;
+        padding:20px;
+        background:#fafafa;
+        border-radius:8px;
+        border:1px solid #eee;
+        text-align:center;
+        }
+
+        .diagram-title{
+        font-weight:bold;
+        margin-bottom:15px;
+        }
+
+        .diagram svg{
+        width:100%;
+        max-width:500px;
+        height:auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Deep Learning and Neural Networks</h1>
+    <p>Understanding Core Neural Network Architectures</p>
+</header>
+
+<div class="container">
+
+    <h2>Artifact Overview</h2>
+
+    <div class="card">
+
+        <p><strong>Title:</strong> Deep Learning and Neural Networks</p>
+
+        <p><strong>Objective:</strong>
+            To understand how major neural network architectures function and how they are applied in solving real-world
+            AI problems.
+        </p>
+
+        <p><strong>Process:</strong>
+            Reviewed deep learning concepts, compared multiple neural network models, and analyzed how each architecture
+            processes data, learns patterns, and is applied in practice.
+        </p>
+
+        <p><strong>Tools:</strong>
+            Conceptual study, AI documentation, and knowledge of frameworks such as TensorFlow and PyTorch.
+        </p>
+
+        <p><strong>Value Proposition:</strong>
+            Shows the ability to understand and explain core deep learning architectures that power modern AI systems
+            such as computer vision, speech recognition, and generative AI.
+        </p>
+
+    </div>
+
+    <h2>Artificial Neural Networks (ANN)</h2>
+
+    <p>
+        Artificial Neural Networks (ANNs) are the foundational building blocks of deep learning. They are inspired by
+        the structure of the human brain and consist of layers of interconnected neurons that process data.
+    </p>
+
+    <p>
+        Each connection between neurons has a weight, which determines how strongly signals are passed. As data flows
+        through the network, each neuron applies a mathematical function to transform the input into meaningful output.
+    </p>
+
+    <ul>
+        <li>Input layer receives raw data</li>
+        <li>Hidden layers extract patterns and relationships</li>
+        <li>Output layer produces predictions</li>
+    </ul>
+
+    <p>
+        <strong>How they learn:</strong>
+        ANNs learn through a process called <strong>backpropagation</strong>. The model makes predictions, calculates
+        the error compared to actual results, and adjusts weights using gradient descent. Over many iterations, the
+        network improves accuracy by minimizing this error.
+    </p>
+
+    <p>
+        ANNs are commonly used for tasks such as classification, regression, and basic pattern recognition.
+    </p>
+    <div class="diagram">
+        <div class="diagram-title">ANN Structure</div>
+
+        <svg viewBox="0 0 400 200">
+
+            <!-- Input -->
+            <circle cx="60" cy="50" r="10"/>
+            <circle cx="60" cy="100" r="10"/>
+            <circle cx="60" cy="150" r="10"/>
+
+            <!-- Hidden -->
+            <circle cx="200" cy="70" r="10"/>
+            <circle cx="200" cy="130" r="10"/>
+
+            <!-- Output -->
+            <circle cx="340" cy="100" r="10"/>
+
+            <!-- Connections -->
+            <line x1="70" x2="190" y1="50" y2="70"/>
+            <line x1="70" x2="190" y1="50" y2="130"/>
+
+            <line x1="70" x2="190" y1="100" y2="70"/>
+            <line x1="70" x2="190" y1="100" y2="130"/>
+
+            <line x1="70" x2="190" y1="150" y2="70"/>
+            <line x1="70" x2="190" y1="150" y2="130"/>
+
+            <line x1="210" x2="330" y1="70" y2="100"/>
+            <line x1="210" x2="330" y1="130" y2="100"/>
+
+        </svg>
+    </div>
+
+    <h2>Convolutional Neural Networks (CNN)</h2>
+
+    <p>
+        Convolutional Neural Networks (CNNs) are designed specifically for processing image and visual data. Unlike
+        traditional neural networks, CNNs automatically learn spatial hierarchies of features from images.
+    </p>
+
+    <ul>
+        <li>Convolution layers detect features like edges, textures, and shapes</li>
+        <li>Pooling layers reduce dimensionality and improve efficiency</li>
+        <li>Fully connected layers perform final classification</li>
+    </ul>
+
+    <p>
+        <strong>How they work:</strong>
+        CNNs scan images using filters (kernels) that slide across the input. Each filter detects a specific feature,
+        such as edges or patterns. As data moves deeper into the network, the model identifies more complex structures
+        like objects and faces.
+    </p>
+
+    <p>
+        CNNs are widely used in:
+    </p>
+
+    <ul>
+        <li>Image recognition (e.g., object detection)</li>
+        <li>Facial recognition systems</li>
+        <li>Medical image analysis</li>
+    </ul>
+    <div class="diagram">
+        <div class="diagram-title">CNN Feature Extraction</div>
+
+        <svg viewBox="0 0 500 200">
+
+            <!-- Input Image -->
+            <rect fill="none" height="80" stroke="black" width="80" x="20" y="50"/>
+            <text font-size="12" x="30" y="145">Image</text>
+
+            <!-- Arrow -->
+            <line stroke="black" x1="110" x2="170" y1="90" y2="90"/>
+
+            <!-- Conv -->
+            <rect fill="none" height="60" stroke="black" width="80" x="170" y="60"/>
+            <text font-size="12" x="180" y="95">Conv</text>
+
+            <!-- Arrow -->
+            <line stroke="black" x1="260" x2="320" y1="90" y2="90"/>
+
+            <!-- Feature -->
+            <rect fill="none" height="80" stroke="black" width="80" x="320" y="50"/>
+            <text font-size="12" x="330" y="145">Feature</text>
+
+        </svg>
+    </div>
+
+    <h2>Recurrent Neural Networks (RNN)</h2>
+
+    <p>
+        Recurrent Neural Networks (RNNs) are designed to handle sequential data, where order and context matter. This
+        makes them ideal for tasks involving time or language.
+    </p>
+
+    <ul>
+        <li>Process data step-by-step in sequence</li>
+        <li>Maintain a “memory” of previous inputs</li>
+        <li>Capture temporal dependencies</li>
+    </ul>
+
+    <p>
+        <strong>How they work:</strong>
+        RNNs pass information from one step to the next using hidden states. This allows the model to retain context
+        from earlier inputs when making predictions.
+    </p>
+
+    <p>
+        However, basic RNNs struggle with long-term dependencies. To solve this, advanced versions like <strong>LSTM
+        (Long Short-Term Memory)</strong> and <strong>GRU (Gated Recurrent Units)</strong> are used to better retain
+        important information over longer sequences.
+    </p>
+
+    <p>
+        RNNs are commonly applied in:
+    </p>
+
+    <ul>
+        <li>Language modeling and text generation</li>
+        <li>Speech recognition</li>
+        <li>Time-series forecasting</li>
+    </ul>
+    <div class="diagram">
+        <div class="diagram-title">RNN Sequence Flow</div>
+
+        <svg viewBox="0 0 500 200">
+
+            <!-- Nodes -->
+            <circle cx="100" cy="100" r="15"/>
+            <circle cx="250" cy="100" r="15"/>
+            <circle cx="400" cy="100" r="15"/>
+
+            <!-- Arrows -->
+            <line stroke="black" x1="115" x2="235" y1="100" y2="100"/>
+            <line stroke="black" x1="265" x2="385" y1="100" y2="100"/>
+
+            <!-- Loop -->
+            <path d="M250 85 C300 40, 350 40, 400 85" fill="none" stroke="black"/>
+
+            <!-- Labels -->
+            <text font-size="12" x="90" y="140">t1</text>
+            <text font-size="12" x="240" y="140">t2</text>
+            <text font-size="12" x="390" y="140">t3</text>
+
+        </svg>
+    </div>
+
+    <h2>Generative Adversarial Networks (GAN)</h2>
+
+    <p>
+        Generative Adversarial Networks (GANs) are a powerful class of neural networks used for generating new data that
+        resembles real data.
+    </p>
+
+    <ul>
+        <li>Generator creates synthetic (fake) data</li>
+        <li>Discriminator evaluates whether data is real or fake</li>
+        <li>Both networks compete and improve over time</li>
+    </ul>
+
+    <p>
+        <strong>How they work:</strong>
+        The generator produces fake samples, while the discriminator tries to distinguish real data from fake data. This
+        adversarial process continues until the generated data becomes highly realistic.
+    </p>
+
+    <p>
+        GANs are widely used in:
+    </p>
+
+    <ul>
+        <li>Image generation (e.g., realistic faces)</li>
+        <li>Data augmentation</li>
+        <li>Video and art creation</li>
+    </ul>
+
+    <p>
+        This architecture is especially important in modern AI applications such as deepfakes and creative AI systems.
+    </p>
+    <div class="diagram">
+        <div class="diagram-title">GAN Architecture</div>
+
+        <svg viewBox="0 0 500 200">
+
+            <!-- Generator -->
+            <rect fill="none" height="50" stroke="black" width="100" x="40" y="80"/>
+            <text font-size="12" x="55" y="110">Generator</text>
+
+            <!-- Arrow -->
+            <line stroke="black" x1="140" x2="220" y1="105" y2="105"/>
+
+            <!-- Fake Data -->
+            <rect fill="none" height="70" stroke="black" width="100" x="220" y="70"/>
+            <text font-size="12" x="235" y="110">Fake Data</text>
+
+            <!-- Arrow -->
+            <line stroke="black" x1="320" x2="400" y1="105" y2="105"/>
+
+            <!-- Discriminator -->
+            <rect fill="none" height="50" stroke="black" width="80" x="400" y="80"/>
+            <text font-size="12" x="410" y="110">Discriminator</text>
+
+        </svg>
+    </div>
+
+    <div class="back">
+        <a href="index.html">← Back to Portfolio</a>
+    </div>
+
+</div>
+
+</body>
+</html>
