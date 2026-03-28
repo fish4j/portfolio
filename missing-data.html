@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Handling Missing Data in Small Datasets</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+line-height:1.6;
+color:#333;
+background:#f7f7f7;
+}
+
+header{
+background:#111;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+background:white;
+}
+
+h2{
+border-bottom:2px solid #eee;
+padding-bottom:10px;
+}
+
+.card{
+background:#f9f9f9;
+padding:20px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.back{
+text-align:center;
+margin-top:40px;
+}
+
+.back a{
+text-decoration:none;
+color:#4da3ff;
+font-weight:bold;
+}
+
+ul{
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Handling Missing Data in Small Datasets</h1>
+<p>Practical Strategy for Robust Model Performance</p>
+</header>
+
+<div class="container">
+
+<h1>Handling Missing Data in Small Datasets</h1>
+<p>Handling Missing Data in Small Datasets for Student Score Prediction</p>
+
+<h2>Introduction</h2>
+<p>
+In machine learning, missing data is a common issue that can significantly impact model performance, especially when working with small datasets. In this case, we are predicting student test scores using only 500 rows, making it critical to handle missing values carefully without losing valuable information.
+</p>
+
+<h2>Description</h2>
+<p>
+The dataset includes features such as hours studied, attendance rate, parent education, and prior grade. However, 8% of prior_grade and 5% of attendance_rate values are missing. Since the model is sensitive to small datasets, dropping rows is not an ideal solution. A thoughtful imputation strategy is required to preserve data while maintaining accuracy.
+</p>
+
+<h2>Objective</h2>
+<p>
+To handle missing data effectively while minimizing bias, preserving dataset size, and ensuring reliable model performance.
+</p>
+
+<h2>Process</h2>
+
+<p><strong>Step 1: Analyze Missing Data</strong></p>
+<ul>
+<li>Identify percentage and distribution of missing values</li>
+<li>Check if missingness is random or patterned</li>
+</ul>
+
+<p><strong>Step 2: Avoid Dropping Rows</strong></p>
+<ul>
+<li>Dataset is small (500 rows), so removing data would reduce model reliability</li>
+</ul>
+
+<p><strong>Step 3: Apply Imputation Strategies</strong></p>
+<ul>
+<li><strong>attendance_rate:</strong> Use mean or median imputation due to numerical nature</li>
+<li><strong>prior_grade:</strong> Use regression or KNN-based imputation to preserve relationships</li>
+<li><strong>parent_education:</strong> Use most frequent value (mode) if categorical</li>
+</ul>
+
+<p><strong>Step 4: Add Missing Indicators</strong></p>
+<ul>
+<li>Create binary flags to indicate missing values</li>
+<li>Helps model learn patterns in missingness</li>
+</ul>
+
+<p><strong>Step 5: Validate Imputation Quality</strong></p>
+<ul>
+<li>Compare distributions before and after imputation</li>
+<li>Ensure no unrealistic values are introduced</li>
+</ul>
+
+<p><strong>Step 6: Model Evaluation</strong></p>
+<ul>
+<li>Use cross-validation to test performance</li>
+<li>Compare results with different imputation methods</li>
+</ul>
+
+<h2>Tools and Technologies Used</h2>
+<ul>
+<li>Python</li>
+<li>Pandas (data cleaning)</li>
+<li>Scikit-learn (imputation techniques like KNNImputer, SimpleImputer)</li>
+<li>Jupyter Notebook</li>
+</ul>
+
+<h2>Value Proposition</h2>
+<p>
+This approach ensures that valuable data is preserved while minimizing bias introduced by missing values. It demonstrates the ability to handle real-world data issues in a structured and effective way.
+</p>
+
+<h2>Unique Value</h2>
+<p>
+Focuses specifically on small dataset challenges, where common strategies like dropping rows are not viable. Emphasizes balancing data integrity with model performance.
+</p>
+
+<h2>Relevance</h2>
+<p>
+Handling missing data is a critical skill in real-world machine learning projects. This artifact showcases practical decision-making and the ability to apply appropriate techniques based on dataset constraints.
+</p>
+
+<div class="back">
+<a href="index.html">← Back to Portfolio</a>
+</div>
+
+</div>
+
+</body>
+</html>
