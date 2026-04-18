@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Validation Data: How It Works and Why You Need It</title>
+
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  background: #f7f7f7;
+}
+
+header {
+  background: #111;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  background: white;
+}
+
+h2 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.back {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.back a {
+  text-decoration: none;
+  color: #4da3ff;
+  font-weight: bold;
+}
+
+ul {
+  margin-top: 10px;
+}
+
+.ref-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ref-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95em;
+}
+
+.ref-list li:last-child {
+  border-bottom: none;
+}
+
+.ref-list a {
+  color: #4da3ff;
+  text-decoration: none;
+}
+
+.ref-list a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Validation Data: How It Works and Why You Need It</h1>
+  <p>Machine Learning Basics Explained</p>
+</header>
+
+<div class="container">
+
+  <h1>Validation Data: How It Works and Why You Need It</h1>
+  <p>A foundational concept in machine learning model development — understanding the role of validation data in building reliable, generalizable models.</p>
+
+  <h2>Introduction</h2>
+  <p>
+    When building a machine learning model, it is not enough to simply train it on data and call it complete. A well-built model must generalize — meaning it should perform accurately on new, unseen data, not just on the data it was trained on. This is where validation data becomes essential. Validation data is a separate portion of the dataset held aside during training, used to evaluate the model's performance and guide decisions such as hyperparameter tuning and early stopping. Without a proper validation strategy, a model risks overfitting: performing exceptionally well on training data while failing in real-world application.
+  </p>
+
+  <h2>Description</h2>
+
+  <p>
+    In a typical machine learning workflow, data is split into three subsets: training data, validation data, and test data. The training set is used to fit the model. The validation set is used during development to evaluate the model after each training iteration, compare different configurations, and select the best-performing version. The test set is reserved for a final, unbiased evaluation only after all model decisions have been made.
+  </p>
+  <p>
+    A common split ratio is 70% training, 15% validation, and 15% test, though this varies depending on dataset size and context. In cases where data is limited, techniques such as k-fold cross-validation can be used to make better use of the available data by rotating which portion serves as the validation set across multiple rounds.
+  </p>
+
+  <h3>Objective</h3>
+  <p>
+    To demonstrate how validation data functions within the machine learning pipeline, why it is critical for detecting overfitting, and how it supports informed model selection and tuning before final evaluation on test data.
+  </p>
+
+  <h3>Process</h3>
+
+  <p><strong>Step 1: Split the Dataset</strong></p>
+  <ul>
+    <li>Divide available data into training, validation, and test sets</li>
+    <li>Ensure the split is randomized to avoid ordering bias</li>
+    <li>Maintain consistent class distribution across splits (stratified splitting)</li>
+  </ul>
+
+  <p><strong>Step 2: Train the Model on Training Data</strong></p>
+  <ul>
+    <li>Fit the model exclusively on the training subset</li>
+    <li>The model learns patterns, weights, and relationships from this data only</li>
+  </ul>
+
+  <p><strong>Step 3: Evaluate on Validation Data</strong></p>
+  <ul>
+    <li>After each training epoch or iteration, measure performance on the validation set</li>
+    <li>Track metrics such as validation loss and validation accuracy</li>
+    <li>Identify signs of overfitting: training accuracy rises while validation accuracy drops</li>
+  </ul>
+
+  <p><strong>Step 4: Tune Hyperparameters Using Validation Feedback</strong></p>
+  <ul>
+    <li>Adjust learning rate, model depth, regularization, dropout, and other parameters</li>
+    <li>Use validation performance as the signal for which configurations improve generalization</li>
+  </ul>
+
+  <p><strong>Step 5: Apply Early Stopping (Optional)</strong></p>
+  <ul>
+    <li>Monitor validation loss across epochs</li>
+    <li>Stop training when validation loss stops improving, preventing overfitting</li>
+  </ul>
+
+  <p><strong>Step 6: Use Cross-Validation for Small Datasets</strong></p>
+  <ul>
+    <li>Apply k-fold cross-validation when data is limited</li>
+    <li>Each fold takes a turn as the validation set; results are averaged across all folds</li>
+    <li>Provides a more stable and reliable performance estimate</li>
+  </ul>
+
+  <p><strong>Step 7: Final Evaluation on Test Data</strong></p>
+  <ul>
+    <li>Only after all model tuning is complete, evaluate performance on the held-out test set</li>
+    <li>This gives an unbiased estimate of how the model will perform on new, real-world data</li>
+  </ul>
+
+  <h3>Tools and Technologies Used</h3>
+  <ul>
+    <li>Python</li>
+    <li>Scikit-learn — <code>train_test_split</code>, <code>KFold</code>, <code>cross_val_score</code></li>
+    <li>TensorFlow / Keras — <code>validation_split</code>, <code>EarlyStopping</code> callback</li>
+    <li>Matplotlib / Seaborn — training vs. validation loss/accuracy curves</li>
+    <li>Jupyter Notebook</li>
+  </ul>
+
+  <h2>Value Proposition of the Artifact</h2>
+
+  <h3>Unique Value</h3>
+  <p>
+    This artifact bridges the gap between understanding training data and understanding the full model development lifecycle. It specifically addresses the common beginner mistake of evaluating a model only on training data, and explains — step by step — how validation data prevents overfitting and enables more trustworthy model decisions. The inclusion of cross-validation techniques extends the content's applicability to real-world scenarios involving limited data.
+  </p>
+
+  <h3>Relevance</h3>
+  <p>
+    Validation data is a non-negotiable component of any serious machine learning project. Whether working on classification, regression, or deep learning tasks, the ability to correctly set up a validation strategy directly impacts model reliability. This artifact is particularly relevant for students and early-career practitioners who are building their first end-to-end models and need a clear, practical understanding of why the data split matters and how to implement it correctly.
+  </p>
+
+  <h2>References</h2>
+  <ul class="ref-list">
+    <li>Géron, A. (2022). <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</em> (3rd ed.). O'Reilly Media. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/" target="_blank">https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/</a></li>
+    <li>Scikit-learn Developers. (n.d.). <em>Cross-validation: Evaluating estimator performance</em>. Scikit-learn Documentation. <a href="https://scikit-learn.org/stable/modules/cross_validation.html" target="_blank">https://scikit-learn.org/stable/modules/cross_validation.html</a></li>
+    <li>Chollet, F. (2021). <em>Deep Learning with Python</em> (2nd ed.). Manning Publications. <a href="https://www.manning.com/books/deep-learning-with-python-second-edition" target="_blank">https://www.manning.com/books/deep-learning-with-python-second-edition</a></li>
+    <li>Google Developers. (n.d.). <em>Validation set: Another partition</em>. Machine Learning Crash Course. <a href="https://developers.google.com/machine-learning/crash-course/validation/another-partition" target="_blank">https://developers.google.com/machine-learning/crash-course/validation/another-partition</a></li>
+    <li>Ng, A. (n.d.). <em>Structuring Machine Learning Projects</em>. DeepLearning.AI / Coursera. <a href="https://www.coursera.org/learn/machine-learning-projects" target="_blank">https://www.coursera.org/learn/machine-learning-projects</a></li>
+  </ul>
+
+  <div class="back">
+    <a href="index.html">← Back to Portfolio</a>
+  </div>
+
+</div>
+
+</body>
+</html>
+
