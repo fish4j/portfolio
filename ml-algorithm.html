@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Machine Learning Algorithm Types – Digital Portfolio</title>
+<style>
+:root{color-scheme:light}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;line-height:1.6;color:#333;background:#f7f7f7}
+header{background:#111;color:white;padding:40px 20px;padding-top:calc(40px + env(safe-area-inset-top,0px));text-align:center}
+header h1{margin:0 0 8px}
+header p{margin:0}
+.container{max-width:900px;margin:auto;padding:40px 20px;background:white}
+h2{border-bottom:2px solid #eee;padding-bottom:10px;margin-top:40px}
+h2:first-child{margin-top:0}
+h3{margin-top:30px}
+table{width:100%;border-collapse:collapse;margin-top:20px}
+table th,table td{border:1px solid #ddd;padding:10px;text-align:left}
+table th{background:#f1f1f1}
+.scroll{overflow-x:auto}
+.scroll table{min-width:600px}
+td.c,th.c{text-align:center}
+.dot{display:inline-block;width:14px;height:14px;border-radius:50%}
+.s{--c:#4da3ff}.u{--c:#e8833a}
+.dot{background:var(--c)}
+.tag{display:inline-block;font-size:12px;font-weight:bold;padding:3px 9px;border-radius:12px;margin:0 4px 4px 0;color:#fff;background:var(--c)}
+.tag.dom{background:#f1f1f1;color:#555;border:1px solid #ddd;font-weight:normal}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.box{border:1px solid #ddd;border-top:4px solid var(--c);padding:16px;background:#fff}
+.box h3{margin:0 0 6px}
+.chip{display:inline-block;font-size:13px;padding:6px 10px;margin:4px 4px 0 0;background:#f1f1f1;border:1px solid #ddd}
+.note{font-size:13px;color:#666}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.filters button{font:bold 13px Arial,Helvetica,sans-serif;padding:8px 14px;border:1px solid #ddd;background:#fff;color:#333;cursor:pointer}
+.filters button[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{border:1px solid #ddd;border-left:4px solid var(--c);padding:14px 16px;background:#fff}
+.card h4{margin:0 0 6px;font-size:17px}
+.card dt{font-size:11px;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;color:#777;margin-top:10px}
+.card dd{margin:2px 0 0;font-size:14.5px}
+.hide{display:none}
+.back{text-align:center;margin-top:40px}
+.back a{text-decoration:none;color:#4da3ff;font-weight:bold}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Machine Learning Algorithm Types</h1>
+<p>Digital Portfolio · A Visual Framework</p>
+</header>
+
+<div class="container">
+
+<h2>Introduction</h2>
+<p>Machine learning is a collection of very different ideas about how computers can learn from data. Some algorithms learn from labeled examples, while others look for hidden structure in unlabeled data. Some excel at spreadsheets and others at images, text, or creating new content. Choosing the right tool starts with understanding these differences.</p>
+
+<h2>Description</h2>
+<p>This project is an infographic that organizes ten widely used algorithms into a single framework. Each algorithm is classified as <strong>Supervised</strong> or <strong>Unsupervised</strong>, mapped to the domains where it is used (<strong>Tabular Data, Computer Vision, NLP, Generative AI</strong>), and paired with example applications and a short explanation of how it works.</p>
+
+<h2>Objective</h2>
+<ul>
+<li>Present at least 8–10 machine learning algorithms in one clear visual framework.</li>
+<li>Classify each by learning type, application domain, use cases, and mechanism.</li>
+<li>Show how the algorithms relate to and differ from each other so a reader can quickly pick a sensible starting point.</li>
+</ul>
+
+<h2>Visual Framework: Algorithm Types</h2>
+
+<h3>A. Learning Type Overview</h3>
+<div class="two">
+<div class="box s">
+<h3>Supervised Learning</h3>
+<p class="note">Learns from labeled examples (input → known answer) to predict outcomes for new data.</p>
+<span class="chip">Linear / Logistic Regression</span><span class="chip">Random Forest</span><span class="chip">Gradient Boosting</span><span class="chip">SVM</span><span class="chip">CNN</span><span class="chip">Transformer*</span>
+</div>
+<div class="box u">
+<h3>Unsupervised Learning</h3>
+<p class="note">Learns from unlabeled data to find clusters, structure, compressed forms, or to generate new samples.</p>
+<span class="chip">K-Means</span><span class="chip">PCA</span><span class="chip">Autoencoder</span><span class="chip">GAN</span>
+</div>
+</div>
+<p class="note">*Transformers are pre-trained with self-supervision (labels come from the text itself) and usually fine-tuned in a supervised way, so they are listed under Supervised for practical purposes.</p>
+
+<h3>B. Application Domain Matrix</h3>
+<div class="scroll"><table id="matrix"></table></div>
+<p class="note"><span class="dot" style="background:#4da3ff"></span> Supervised &nbsp; <span class="dot" style="background:#e8833a"></span> Unsupervised &nbsp; · Dot = commonly applied in that domain</p>
+
+<h3>C. Algorithm Details</h3>
+<p class="note">Use the filters to compare groups of algorithms.</p>
+<div class="filters" id="filters"></div>
+<div class="cards" id="cards"></div>
+
+<h2>Process</h2>
+<ol>
+<li><strong>Research:</strong> reviewed textbooks and original papers to select ten algorithms that span the main learning types and domains.</li>
+<li><strong>Classify:</strong> labeled each algorithm as supervised or unsupervised and mapped it to Tabular Data, Computer Vision, NLP, and Generative AI.</li>
+<li><strong>Summarize:</strong> wrote a short mechanism and concrete real-world use cases for each.</li>
+<li><strong>Design:</strong> built a visual hierarchy (type → domain matrix → detail cards) with consistent color coding.</li>
+<li><strong>Review:</strong> checked accuracy against references and tested readability on mobile and desktop.</li>
+</ol>
+
+<h2>Tools and Technologies Used</h2>
+<ul>
+<li><strong>HTML / CSS / JavaScript:</strong> page layout, styling, and the interactive filters</li>
+<li><strong>Claude:</strong> AI-assisted drafting and structuring</li>
+<li><strong>Python, scikit-learn, PyTorch:</strong> reference implementations of the algorithms described</li>
+</ul>
+
+<h2>Value Proposition</h2>
+<h3>Unique Value</h3>
+<ul>
+<li>Three layers in one view: type, domain, and detail.</li>
+<li>Color-coded and filterable, so differences are visible at a glance.</li>
+<li>Plain-language explanations that stay technically accurate.</li>
+</ul>
+<h3>Relevance</h3>
+<ul>
+<li>Algorithm selection is a core skill for data science and AI roles.</li>
+<li>Covers both classic methods and modern deep learning and generative AI.</li>
+<li>Useful as a quick study guide or a communication tool for non-technical audiences.</li>
+</ul>
+
+<h2>References</h2>
+<ol>
+<li>Hastie, T., Tibshirani, R., &amp; Friedman, J. (2009). <em>The Elements of Statistical Learning: Data Mining, Inference, and Prediction</em> (2nd ed.). Springer. ISBN 978-0-387-84857-0.</li>
+<li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning</em>. MIT Press. ISBN 978-0-262-03561-3.</li>
+<li>Breiman, L. (2001). Random Forests. <em>Machine Learning, 45</em>(1), 5–32. https://doi.org/10.1023/A:1010933404324</li>
+<li>Chen, T., &amp; Guestrin, C. (2016). XGBoost: A scalable tree boosting system. <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’16)</em>, 785–794. https://doi.org/10.1145/2939672.2939785</li>
+<li>Cortes, C., &amp; Vapnik, V. (1995). Support-vector networks. <em>Machine Learning, 20</em>(3), 273–297. https://doi.org/10.1007/BF00994018</li>
+<li>LeCun, Y., Bottou, L., Bengio, Y., &amp; Haffner, P. (1998). Gradient-based learning applied to document recognition. <em>Proceedings of the IEEE, 86</em>(11), 2278–2324. https://doi.org/10.1109/5.726791</li>
+<li>Vaswani, A., et al. (2017). Attention is all you need. <em>Advances in Neural Information Processing Systems, 30</em> (NIPS 2017), 5998–6008.</li>
+<li>Kingma, D. P., &amp; Welling, M. (2014). Auto-encoding variational Bayes. <em>2nd International Conference on Learning Representations (ICLR 2014)</em>. arXiv:1312.6114.</li>
+<li>Goodfellow, I., et al. (2014). Generative adversarial nets. <em>Advances in Neural Information Processing Systems, 27</em> (NIPS 2014), 2672–2680.</li>
+<li>Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python. <em>Journal of Machine Learning Research, 12</em>, 2825–2830.</li>
+</ol>
+
+<div class="back">
+<a href="index.html">← Back to Portfolio</a>
+</div>
+
+</div>
+
+<script>
+var D=["Tabular Data","Computer Vision","NLP","Generative AI"];
+var A=[
+{n:"Linear / Logistic Regression",t:"s",d:[1,0,0,0],u:"Predicting house prices; flagging fraudulent transactions; estimating customer churn.",e:"Fits a straight-line (or S-curve for yes/no outcomes) relationship between input features and the target by minimizing prediction error."},
+{n:"Random Forest",t:"s",d:[1,0,0,0],u:"Credit scoring; medical diagnosis from patient records; predicting equipment failure.",e:"Builds many decision trees on random subsets of data and features, then combines their votes. Averaging reduces overfitting."},
+{n:"Gradient Boosting (XGBoost)",t:"s",d:[1,0,0,0],u:"Click-through prediction in advertising; demand forecasting; winning many Kaggle tabular contests.",e:"Adds small trees one at a time, each one correcting the mistakes of the ensemble so far."},
+{n:"Support Vector Machine (SVM)",t:"s",d:[1,0,1,0],u:"Spam filtering; text categorization; classifying gene-expression data.",e:"Finds the boundary that separates classes with the widest possible margin, using kernels to handle curved boundaries."},
+{n:"Convolutional Neural Network (CNN)",t:"s",d:[0,1,0,0],u:"Face unlock; detecting tumors in X-rays; reading road signs in self-driving cars.",e:"Slides small learned filters across an image to detect edges, then shapes, then objects, in stacked layers."},
+{n:"Transformer",t:"s",d:[0,1,1,1],u:"Machine translation; chatbots and assistants; text summarization; code generation.",e:"Uses self-attention to weigh how relevant every word (or image patch) is to every other, capturing long-range context in parallel."},
+{n:"K-Means Clustering",t:"u",d:[1,1,0,0],u:"Customer segmentation; image color compression; grouping similar news articles.",e:"Places K centers, assigns each point to its nearest center, moves centers to the group averages, and repeats until stable."},
+{n:"Principal Component Analysis (PCA)",t:"u",d:[1,1,0,0],u:"Reducing hundreds of survey variables to a few; visualizing high-dimensional data; compressing face images.",e:"Rotates the data onto new axes that capture the most variance, so a few components keep most of the information."},
+{n:"Autoencoder",t:"u",d:[1,1,0,1],u:"Anomaly detection in manufacturing; image denoising; learning compact embeddings.",e:"A network squeezes input into a small code and then rebuilds it. Learning to reconstruct forces it to capture the essentials."},
+{n:"Generative Adversarial Network (GAN)",t:"u",d:[0,1,0,1],u:"Photorealistic face synthesis; data augmentation; image super-resolution; style transfer.",e:"A generator creates fakes while a discriminator tries to spot them. Competing pushes the generator toward realistic output."}
+];
+var f={t:"all",d:"all"};
+function tag(c,x){return '<span class="tag '+c+'">'+x+'</span>'}
+var m='<tr><th>Algorithm</th><th>Type</th>'+D.map(function(x){return '<th class="c">'+x+'</th>'}).join('')+'</tr>';
+A.forEach(function(a){m+='<tr><td>'+a.n+'</td><td>'+tag(a.t,a.t=="s"?"Supervised":"Unsupervised")+'</td>'+a.d.map(function(v){return '<td class="c">'+(v?'<span class="dot '+a.t+'"></span>':'')+'</td>'}).join('')+'</tr>'});
+document.getElementById("matrix").innerHTML=m;
+var opts=[["t","all","All"],["t","s","Supervised"],["t","u","Unsupervised"],["d","0","Tabular Data"],["d","1","Computer Vision"],["d","2","NLP"],["d","3","Generative AI"]];
+var fb=document.getElementById("filters");
+opts.forEach(function(o,i){var b=document.createElement("button");b.textContent=o[2];b.setAttribute("aria-pressed",i==0);
+b.onclick=function(){f={t:"all",d:"all"};if(o[2]!="All")f[o[0]]=o[1];
+[].forEach.call(fb.children,function(x){x.setAttribute("aria-pressed",x===b)});render()};fb.appendChild(b)});
+function render(){var h="";A.forEach(function(a,i){
+var ok=(f.t=="all"||a.t==f.t)&&(f.d=="all"||a.d[+f.d]);
+var doms=D.map(function(x,j){return a.d[j]?tag("dom",x):""}).join("");
+h+='<article class="card '+a.t+(ok?'':' hide')+'"><h4>'+(i+1)+'. '+a.n+'</h4>'+tag(a.t,a.t=="s"?"Supervised":"Unsupervised")+
+'<dl><dt>Application domains</dt><dd>'+doms+'</dd><dt>Example uses</dt><dd>'+a.u+'</dd><dt>How it works</dt><dd>'+a.e+'</dd></dl></article>'});
+document.getElementById("cards").innerHTML=h}
+render();
+</script>
+</body>
+</html>
